@@ -6,7 +6,7 @@ After=network-online.target
 [Service]
 Type=simple
 EnvironmentFile=/var/lib/scorify/.env
-ExecStart=/var/lib/scorify/scorify koth --topic "{{ koth_check1 }}" --topic "{{ koth_check2 }}"
+ExecStart=/var/lib/scorify/scorify koth --topic "{{ koth_check }}"
 WorkingDirectory=/var/lib/scorify
 Restart=always
 
