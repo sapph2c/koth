@@ -1,0 +1,16 @@
+[Unit]
+Description=Score KotH services and report the result
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+EnvironmentFile=/var/lib/scorify/.env
+ExecStart=/var/lib/scorify/scorify koth --topic "{{ koth_check1 }}" --topic "{{ koth_check2 }}"
+WorkingDirectory=/var/lib/scorify
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
+# vim: set filetype=systemd:
